@@ -25,3 +25,4 @@ int main(int argc, char **argv){
 // hàm main gọi hàm test
 // trong test chạy phương thức run trong class symbol 
 //
+oke
