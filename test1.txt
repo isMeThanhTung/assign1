@@ -1,0 +1,6 @@
+INSERT x number
+INSERT y string
+INSERT z string
+ASSIGN x 15
+ASSIGN y 'n76'
+ASSIGN y 'vddd'

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "SymbolTable.cpp": [
+      {
+        "id": "392567b0-ce9e-4559-9b79-4396ec34a1fa",
+        "line": 9,
+        "version": 400,
+        "index": 142
+      }
+    ],
+    "SymbolTable.h": [
+      {
+        "id": "111b8564-91cb-4821-9d41-ff40d84113c4",
+        "line": 20,
+        "version": 5982,
+        "index": 344
+      },
+      {
+        "id": "f74853b0-054a-4dbb-a011-2b6bc5eb416f",
+        "line": 26,
+        "version": 5982,
+        "index": 483
+      }
+    ]
+  }
+}
