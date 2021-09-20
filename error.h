@@ -1,9 +1,3 @@
-// file này không chỉnh.
-
-
-
-
-
 #ifndef DSA_EXCEPTION_H
 #define DSA_EXCEPTION_H
 #include <string>

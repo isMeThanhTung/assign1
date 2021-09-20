@@ -22,7 +22,3 @@ int main(int argc, char **argv){
     test("test1.txt");
     return 0;
 }
-// hàm main gọi hàm test
-// trong test chạy phương thức run trong class symbol 
-//
-oke

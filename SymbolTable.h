@@ -33,7 +33,6 @@ public:
 
 	void assignCommand(string name, string var){
 		string errorCommand = "ASSIGN " + name + " " + var;
-		//tìm node để lấy kiểu dữ liệu
 		Node* temp = this->head;
 		while(temp != 0){
 			if(temp->name == name) break;
@@ -74,18 +73,25 @@ public:
 		}
 	}
 
+	void block(int& blockCheck, string str){
+		if (str == "BEGIN") blockCheck++;
+		else blockCheck--;
+		if (blockCheck < 0) throw UnknownBlock();
+
+
+	}
+
     void run(string filename){
 		fstream input;
 		input.open(filename, ios::in);
 		string str;
+		int blockCheck = 0;
 
 		string commandList[] = {"INSERT", "ASSIGN", "BEGIN", "END", "LOOKUP", "PRINT", "RPRINT"};
 
 		while (!input.eof()){
-			// lấy từng dòng từ file.
 			string str;
 			getline(input, str);
-			//cout << str << endl;
 			
 			string command;
 			string identifierName;
@@ -101,20 +107,19 @@ public:
 			//lấy type.
 			type = str;
 
-			//xử lý lệnh. nếu k ra success thì out
-			
 			if (command == commandList[0]) insertCommand(identifierName, type);
 			else if(command == commandList[1]) assignCommand(identifierName, type);
-			// else if(command == commandList[2])	
-			// else if(command == commandList[3])	
+			else if(command == commandList[2]) block(blockCheck, "BEGIN");
+			else if(command == commandList[3]) block(blockCheck, "END");
 			// else if(command == commandList[4])
 			// else if(command == commandList[5])
 			// else if(command == commandList[6])
 			// else 
 
-			//cout << command << '|' << identifierName << '|' << type << endl;
-			cout << "success" << endl;
+			if (command != commandList[2] && command != commandList[3])
+				cout << "success" << endl;
 		}
+		if (blockCheck > 0) throw UnclosedBlock(blockCheck);
 	}
 	class Node{
 

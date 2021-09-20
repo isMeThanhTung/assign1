@@ -8,5 +8,3 @@
 #include "error.h"
 
 #endif
-
-// file này không chỉnh sửa 
